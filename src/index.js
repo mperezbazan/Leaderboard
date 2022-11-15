@@ -1,4 +1,5 @@
 import './style.css';
+import Scores from './modules/Scores';
 
 const data = [
   { name: 'Name', score: 100 },
@@ -10,11 +11,4 @@ const data = [
   { name: 'Name', score: 42 },
 ];
 
-const listContent = document.querySelector('.list-content');
-data.forEach((item) => {
-  const { name, score } = item;
-  const li = document.createElement('li');
-  li.classList.add('list-item');
-  li.innerHTML = `${name}: ${score}`;
-  listContent.appendChild(li);
-});
+Scores(data);
