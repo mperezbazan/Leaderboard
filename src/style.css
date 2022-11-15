@@ -67,3 +67,7 @@
 .form-input {
   padding: 8px;
 }
+
+.submit {
+  align-self: flex-end;
+}

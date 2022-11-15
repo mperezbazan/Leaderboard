@@ -1,5 +1,5 @@
 import './style.css';
-import Scores from './modules/Scores';
+import Scores from './modules/Scores.js';
 
 const data = [
   { name: 'Name', score: 100 },
