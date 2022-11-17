@@ -49,6 +49,11 @@
   list-style: none;
 }
 
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .form-content {
   padding-block: 24px;
   display: flex;
@@ -70,4 +75,14 @@
 
 .submit {
   align-self: flex-end;
+}
+
+.message {
+  border: 2px solid green;
+  padding: 10px;
+  width: 100%;
+}
+
+.display-none {
+  display: none;
 }

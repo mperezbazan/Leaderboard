@@ -23,10 +23,11 @@
         <section class="form-container">
           <h2 class="subtitle">Add your score</h2>
           <form class="form-content" action="#">
-            <input type="text" class='form-input' name="name" id="name" placeholder="Your name" />
-            <input type="text" class='form-input' name="score" id="score" placeholder="Your name" />
+            <input type="text" class='form-input' name="name" id="name" placeholder="Your name" required/>
+            <input type="number" class='form-input' name="score" id="score" placeholder="Your score" required/>
             <input type="submit" value="Submit" class="button submit">
           </form>
+          <small class="message display-none"></small>
         </section>
       </div>
   </main>
