@@ -1,21 +1,10 @@
 import './style.css';
-import Scores from './modules/Scores.js';
+import { sendScore, showScores } from './modules/Functions.js';
+import { message, form, refreshButton } from './modules/Variables.js';
 
-const message = document.querySelector('.message');
-const getScores = async () => {
-  const data = await Scores.getData();
-  return data.result;
-};
-const sendScore = async (data) => {
-  const result = await Scores.postData(data);
-  return result.result;
-};
-const refreshButton = document.querySelector('#refresh');
 refreshButton.addEventListener('click', () => {
-  getScores().then((result) => Scores.render(result));
+  showScores();
 });
-
-const form = document.querySelector('form');
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   const { name, score } = e.target;
@@ -28,12 +17,12 @@ form.addEventListener('submit', (e) => {
     message.innerHTML = `${result} <br>Click on Refresh to update the list`;
     name.value = '';
     score.value = '';
-    getScores().then((result) => Scores.render(result));
+    showScores();
     setTimeout(() => {
       message.classList.add('display-none');
     }, 5000);
   });
 });
 window.addEventListener('DOMContentLoaded', () => {
-  getScores().then((result) => Scores.render(result));
+  showScores();
 });
